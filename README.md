@@ -137,6 +137,37 @@ Let's now look at a series of concrete tips and tricks to help you boost your ku
 
 
 
+# 1. Save typing with command completion
+
+One of the most useful, but often overlooked, tricks to boost your kubectl productivity is command completion.
+
+Command completion allows you to auto-complete individual parts of kubectl commands with the Tab key. This works for sub-commands, options, and arguments, including hard-to-type things like resource names.
+
+Here you can see kubectl command completion in action:
+
+![img8](https://github.com/sangam14/kubernets101/blob/master/pic8.gif)
+
+
+Command completion is available for the Bash and Zsh shells.
+
+The [official documentation](https://kubernetes.io/docs/tasks/tools/install-kubectl/#enabling-shell-autocompletion)contains detailed instructions for setting up command completion, but the following sections provide a recap for you.
+
+How command completion works
+
+In general, command completion is a shell feature that works by the means of a completion script. A completion script is a shell script that defines the completion behaviour for a specific command. Sourcing a completion script enables completion for the corresponding command.
+
+Kubectl can automatically generate and print out the completion scripts for Bash and Zsh with the following commands:
+
+```
+kubectl completion bash
+# or
+kubectl completion zsh
+```
+
+
+
+
+
 
 
 
