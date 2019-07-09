@@ -64,34 +64,34 @@ Assume, you just executed kubectl create -f replicaset.yaml, upon which kubectl 
 What effects causes this in the cluster? Watch it below:
 
 
-![img1]()
+![img1](https://github.com/sangam14/kubernets101/blob/master/pic1.svg)
 
 
 Following ```kubectl create -f replicaset.yaml```, the API server saves your ReplicaSet resource definition in the storage backend.
 
-![img2]()
+![img2](https://github.com/sangam14/kubernets101/blob/master/pic2.svg)
 
 This triggers the ReplicaSet controller in the controller manager, who watches for creations, updates, and deletions of ReplicaSet resources.
 
 
 
-![img3]()
+![img3](https://github.com/sangam14/kubernets101/blob/master/pic3.svg)
 
 The ReplicaSet controller creates a Pod definition for each replica of the ReplicaSet (according to the Pod template in the ReplicaSet definition) and saves them in the storage backend.
 
 
-![img4]()
+![img4](https://github.com/sangam14/kubernets101/blob/master/pic4.svg)
 
 This triggers the scheduler who watches for Pods that have not yet been assigned to a worker node.
 
-![img5]()
+![img5](https://github.com/sangam14/kubernets101/blob/master/pic5.svg)
 
 The scheduler chooses a suitable worker node for each Pod and adds this information to the Pod definitions in the storage backend.
 
-![img6]()
+![img6](https://github.com/sangam14/kubernets101/blob/master/pic6.svg)
 
 This triggers the kubelet on the worker node that the Pods have been scheduled to, who watches for Pods that have been scheduled to its worker node.
-![img7]()
+![img7](https://github.com/sangam14/kubernets101/blob/master/pic7.svg)
 The kubelet reads the Pod definitions from the storage backend and instructs the container runtime (Docker, for example) to run the containers on the worker node.
 
 
